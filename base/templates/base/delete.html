@@ -1,0 +1,16 @@
+<!-- этот шаблон для удаления чего-либо -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" action="">
+
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{obj}}"?</p>
+    <a href="{{request.META.HTTP_REFERER}}">Go back</a>  <!--вернётся туда, откуда пришел пользователь -->
+    <input type="submit" value="Confirm" />
+
+</form>
+
+{% endblock %}
