@@ -122,9 +122,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
+# STATIC_ROOT =
 
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 # STATICFILES_DIRS = [
 #     BASE_DIR / 'news/static/',
 # ] #не стандартные пути для статический файлов

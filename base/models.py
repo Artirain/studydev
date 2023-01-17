@@ -35,5 +35,8 @@ class Message(models.Model):
     updated = models.DateTimeField(auto_now=True) #auto_now обновляет дату каждый раз при изменении (сохранении) строки в базе;
     created = models.DateTimeField(auto_now_add=True) #auto_now_add создает дату при создании строки в базе данных
 
+    class Meta:
+        ordering = ['-updated', '-created'] #атрибут ordering - сортирует по убыванию по created_at 
+
     def __str__(self):
         return self.body[0:50] #обрезаем до первых 50 символов
